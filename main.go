@@ -40,9 +40,14 @@ var tree = &algos.TreeNode{
 	}}
 
 func main() {
-	fmt.Println(algos.BinarySearch(sortedArr, 101))
+	fmt.Printf("BS. Index of elem: %d\n", algos.BinarySearch(sortedArr, 101))
 
+	fmt.Println("DFS Recursive. Traversed tree:")
 	algos.DFSRecursive(tree)
+
+	fmt.Println("DFS Stack. Traversed tree:")
 	algos.DFSStack(tree)
-	algos.DFSSelf(tree)
+
+	fmt.Println("BFS. Traversed tree:")
+	algos.BFS(tree)
 }
