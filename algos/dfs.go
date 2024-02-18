@@ -2,11 +2,6 @@ package algos
 
 import "fmt"
 
-type TreeNode struct {
-	Value    int
-	Children []*TreeNode
-}
-
 func DFSRecursive(node *TreeNode) {
 	if node == nil {
 		return
@@ -23,15 +18,14 @@ func DFSStack(node *TreeNode) {
 		return
 	}
 
-	stack := []*TreeNode{node}
+	stack := NewStack(node)
 
-	for len(stack) > 0 {
-		current := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
+	for len(stack.storage) > 0 {
+		current := stack.Pop()
 
 		fmt.Println(current.Value)
 		for i := len(current.Children) - 1; i >= 0; i-- {
-			stack = append(stack, current.Children[i])
+			stack.Push(current.Children[i])
 		}
 	}
 }
