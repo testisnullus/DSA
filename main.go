@@ -6,6 +6,7 @@ import (
 )
 
 var sortedArr = []int{1, 5, 12, 23, 46, 87, 101, 187, 291, 332, 341, 396, 401, 502, 505, 555, 591, 600}
+var unsortedArr = []int{1, 10, 32, 4, 5, 67, 101, 98, 7, 102, 69, 501, 32, 45, 801, 95, 154, 11, 53, 609}
 
 // Example tree:
 //
@@ -50,4 +51,6 @@ func main() {
 
 	fmt.Println("BFS. Traversed tree:")
 	algos.BFS(tree)
+
+	fmt.Println(algos.InsertionSort(unsortedArr))
 }
